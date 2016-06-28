@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                min-width: 200px;
+                min-height: 100px;
+                border: solid 1px #ccc;
+                padding: 10px;
+            }
+        </style>
+        <script type='text/javascript' src='jquery-3.0.0.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                console.log("$(document).ready()");
+
+                $('input').focus();
+
+                $('input').click(function() {
+                    console.log('clicked..');
+                });
+
+                $('input').keypress(function() {
+                    console.log('keypress..');
+                });
+
+                $('input').blur(function() {
+                    console.log('you blurred..');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Events - ready, focus, click, keypress, blur</h1>
+            <input type='text'/>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                min-width: 200px;
+                min-height: 100px;
+                border: solid 1px #ccc;
+                padding: 10px;
+            }
+        </style>
+        <script type='text/javascript' src='jquery-3.0.0.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                $('.button1').click(function() {
+                    $(this).hide();
+                    $('.buttonShow').show();
+                });
+                $('.buttonShow').click(function() {
+                    $(this).hide();
+                    $('.button1').show();
+                });
+                $('.toggle').click(function() {
+                    $(this).toggle();
+                });
+                $('.button2').click(function() {
+                    $(this).fadeOut();
+                });
+
+                $('.button3').click(function() {
+                    $('p.fadeIn').fadeIn();
+                });
+
+                $('.button4').click(function() {
+                    $(this).animate({
+                        left: "+=50",
+                    }, 500, function() {
+                        console.log('done...');
+                      });
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Effects - hide, show, fadeIn, fadeOut, animate</h1>
+                <div class='a'>
+                    <button class='button1'>hide this</button>
+                    <button class='buttonShow' style='display:none'>Show it</button>
+                    <button class='toggle'>Toggle</button>
+                </div>
+
+                <div class='b'>
+                <button class='button2'>fadeOut</button>
+                </div>
+
+                <div class='c'>
+                    <button class='button3'>fadeIn</button>
+                    <p class='fadeIn' style='display:none'>fading in..</p>
+                </div>
+
+                <div class='d'>
+                    <button style='position:absolute' class='button4'>animate</button>
+                </div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                min-width: 200px;
+                min-height: 100px;
+                border: solid 1px #ccc;
+                padding: 10px;
+            }
+        </style>
+        <script type='text/javascript' src='jquery-3.0.0.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                $('.button1').click(function() {
+                    var p = $('p').eq(0);
+                    p.clone().appendTo('.a');
+                });
+
+                $('.button2').click(function() {
+                    $('.b').append('appended ');
+                });
+
+                $('.button3').click(function() {
+                    $('.c').html('lorem ipsum');
+                });
+
+                $('.button4').click(function() {
+                    $('.d').after('lorem ipsum');
+                });
+
+                $('.button5').click(function() {
+                    $('.d').empty();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>DOM Manipulation - clone, appendTo, append, html, after, empty</h1>
+                <div class='a'>
+                    <p>Copy this</p>
+                    <button class='button1'>clone and appendTo</button>
+                </div>
+
+                <div class='b'>
+                <button class='button2'>append</button>
+                </div>
+
+                <div class='c'>
+                    <button class='button3'>html</button>
+                </div>
+
+                <div class='d'>
+                    <button class='button4'>after</button>
+                </div>
+
+                <div class='e'>
+                    <button class='button5'>empty</button>
+                </div>
+    </body>
+</html>

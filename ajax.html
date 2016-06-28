@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                min-width: 200px;
+                min-height: 100px;
+                border: solid 1px #ccc;
+                padding: 10px;
+            }
+        </style>
+        <script type='text/javascript' src='jquery-3.0.0.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                $('button').click(function() {
+                    $.post('process.php', function(data) {
+                        console.log(data);
+                    })
+                    .done( function() {
+                        console.log('done..');
+                    })
+                    .fail(function() {
+                        console.log('failed');
+                    })
+                    .always(function() {
+                        console.log('always');
+                    });
+                });
+
+                $.get('process.php', function(data) {
+                    console.log(data);
+                })
+                .done( function() {
+                    console.log('done..');
+                })
+                .fail(function() {
+                    console.log('failed');
+                })
+                .always(function() {
+                    console.log('always');
+                });
+
+                $('.b').load('load.html');
+
+                $('form').on('submit', function(event) {
+                  event.preventDefault();
+                  console.log($(this).serialize());
+                  console.log($(this).serializeArray());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Ajax - post, get, load, serialize, serializeArray</h1>
+            <div class='a'>
+                <form>
+                    <input type='text' name='text'/><button>Post</button>
+                    <input type='submit' value='Submit'/>
+                </form>
+            </div>
+            <div class='b'>
+            </div>
+    </body>
+</html>

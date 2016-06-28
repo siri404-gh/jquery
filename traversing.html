@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                min-width: 200px;
+                min-height: 100px;
+                border: solid 1px #ccc;
+                padding: 10px;
+            }
+        </style>
+        <script type='text/javascript' src='jquery-3.0.0.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                $('.button1').click(function() {
+                    $('.a li').filter(function(i) {
+                        return i % 2 == 0? true: false;
+                    }).css('background-color', 'green');
+                });
+
+                $('.button2').click(function() {
+                    $('.b li').first().css('background-color', 'green');
+                });
+
+                $('.button3').click(function() {
+                    $('.c li').not(function(i) {
+                        return i%2 == 0? true:false;
+                    }).css('background-color', 'green');
+                });
+
+                $('.button4').click(function() {
+                    $('.d li').eq(3).css('background-color', 'green');
+                });
+
+                $('.button5').click(function() {
+                    $('.e li').has('ul').css('background-color', 'green');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Traversing - filter, first, not, eq, has</h1>
+            <div class='a'>
+                <ul>
+                  <li>list item 1</li>
+                  <li>list item 2</li>
+                  <li>list item 3</li>
+                  <li>list item 4</li>
+                  <li>list item 5</li>
+                  <li>list item 6</li>
+                </ul>
+                <button class='button1'>filter</button>
+            </div>
+
+            <div class='b'>
+                <ul>
+                  <li>list item 1</li>
+                  <li>list item 2</li>
+                  <li>list item 3</li>
+                  <li>list item 4</li>
+                  <li>list item 5</li>
+                  <li>list item 6</li>
+                </ul>
+                <button class='button2'>first</button>
+            </div>
+
+            <div class='c'>
+                <ul>
+                  <li>list item 1</li>
+                  <li>list item 2</li>
+                  <li>list item 3</li>
+                  <li>list item 4</li>
+                  <li>list item 5</li>
+                  <li>list item 6</li>
+                </ul>
+                <button class='button3'>not</button>
+            </div>
+
+            <div class='d'>
+                <ul>
+                  <li>list item 1</li>
+                  <li>list item 2</li>
+                  <li>list item 3</li>
+                  <li>list item 4</li>
+                  <li>list item 5</li>
+                  <li>list item 6</li>
+                </ul>
+                <button class='button4'>eq</button>
+            </div>
+
+            <div class='e'>
+                <ul>
+                 <li>list item 1</li>
+                 <li>list item 2
+                   <ul>
+                     <li>list item 2-a</li>
+                     <li>list item 2-b</li>
+                   </ul>
+                 </li>
+                 <li>list item 3</li>
+                 <li>list item 4</li>
+               </ul>
+                <button class='button5'>has</button>
+            </div>
+    </body>
+</html>
